@@ -61,7 +61,7 @@ endif;
 unset($__errorArgs, $__bag); ?> select2">
                                     <option value=""><?php echo app('translator')->get('index.select'); ?></option>
                                     <?php $__currentLoopData = $floors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $floor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <option value="<?php echo e($floor->id); ?>" <?php echo e((isset($obj) && $obj->floor_id == $floor->floor_id) == $floor->id || old('floor_id') == $floor->floor_id ? 'selected' : ''); ?>>
+                                        <option value="<?php echo e($floor->id); ?>" <?php echo e((isset($obj) && $obj->floor_id == $floor->id) == $floor->id || old('floor_id') == $floor->id ? 'selected' : ''); ?>>
                                             <?php echo e($floor->name ?? ''); ?>
 
                                         </option>
@@ -105,7 +105,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="col-sm-12 mb-2 col-md-4">
                             <div class="form-group">
-                                <label><?php echo app('translator')->get('index.description_floor'); ?><span class="required_star">*</span></label>
+                                <label><?php echo app('translator')->get('index.description_floor'); ?></label>
                                 <input type="text" name="description" id="description" class="form-control <?php $__errorArgs = ['description'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

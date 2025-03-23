@@ -38,7 +38,7 @@
                                     class="form-control @error('floor_id') is-invalid @enderror select2">
                                     <option value="">@lang('index.select')</option>
                                     @foreach ($floors as $floor)
-                                        <option value="{{ $floor->id }}" {{ (isset($obj) && $obj->floor_id == $floor->floor_id) == $floor->id || old('floor_id') == $floor->floor_id ? 'selected' : '' }}>
+                                        <option value="{{ $floor->id }}" {{ (isset($obj) && $obj->floor_id == $floor->id) == $floor->id || old('floor_id') == $floor->id ? 'selected' : '' }}>
                                             {{ $floor->name ?? '' }}
                                         </option>
                                     @endforeach
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-sm-12 mb-2 col-md-4">
                             <div class="form-group">
-                                <label>@lang('index.description_floor')<span class="required_star">*</span></label>
+                                <label>@lang('index.description_floor')</label>
                                 <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" value="{{ isset($obj) && $obj->description ? $obj->description : old('description') }}">
                                 @error('description')
                                     <div class="text-danger">{{ $message }}</div>

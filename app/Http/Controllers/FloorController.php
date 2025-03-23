@@ -108,9 +108,8 @@ class FloorController extends Controller
     public function destroy($id)
     {
         //
-        $currency = Floor::find($id);
-        $currency->del_status = 'Deleted';
-        $currency->save();
+        $floor = Floor::find($id);
+        $floor->delete();
         return redirect()->route('floor.index')->with(deleteMessage());
     }
 }

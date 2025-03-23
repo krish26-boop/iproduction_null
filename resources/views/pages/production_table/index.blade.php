@@ -50,7 +50,7 @@
                                     <td class="ir_txt_center">{{ $i-- }}</td>
                                     <td>{{ $value->table_name }}</td>
                                     <td>{{ $value->floor->name }}</td>
-                                    <td>{{ $value->description }}</td>
+                                    <td>{{ $value->description ?$value->description: '-' }}</td>
                                     <td class="ir_txt_center">
                                         @if (routePermission('production_table.edit'))
                                             <a href="{{ url('production_table') }}/{{ encrypt_decrypt($value->id, 'encrypt') }}/edit" class="button-success"

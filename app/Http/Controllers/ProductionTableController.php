@@ -46,7 +46,7 @@ class ProductionTableController extends Controller
         $request->validate([
             'table_name' => 'required',
             'floor_id' => 'required|exists:tbl_floors,id',
-            'number_of_seats' => 'required|integer|min:1',
+            'number_of_seats' => 'required|integer',
             'description' => 'nullable'
         ]);
 
@@ -99,7 +99,7 @@ class ProductionTableController extends Controller
         $request->validate([
             'table_name' => 'required',
             'floor_id' => 'required|exists:tbl_floors,id',
-            'number_of_seats' => 'required|integer|min:1',
+            'number_of_seats' => 'required|integer',
             'description' => 'nullable'
         ]);
 
@@ -120,12 +120,11 @@ class ProductionTableController extends Controller
      * @param  \App\ProductionTable  $productionTable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductionTable $productionTable)
+    public function destroy($id)
     {
         //
-        $currency = ProductionTable::find($id);
-        $currency->del_status = 'Deleted';
-        $currency->save();
-        return redirect()->route('ProductionTable.index')->with(deleteMessage());
+        $production_able = ProductionTable::find($id);
+        $production_able->delete();
+        return redirect()->route('production_table.index')->with(deleteMessage());
     }
 }

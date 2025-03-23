@@ -50,7 +50,7 @@
                                     <td class="ir_txt_center"><?php echo e($i--); ?></td>
                                     <td><?php echo e($value->table_name); ?></td>
                                     <td><?php echo e($value->floor->name); ?></td>
-                                    <td><?php echo e($value->description); ?></td>
+                                    <td><?php echo e($value->description ?$value->description: '-'); ?></td>
                                     <td class="ir_txt_center">
                                         <?php if(routePermission('production_table.edit')): ?>
                                             <a href="<?php echo e(url('production_table')); ?>/<?php echo e(encrypt_decrypt($value->id, 'encrypt')); ?>/edit" class="button-success"

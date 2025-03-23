@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-sm-12 mb-2 col-md-4">
                             <div class="form-group">
-                                <label>@lang('index.description_floor')<span class="required_star">*</span></label>
+                                <label>@lang('index.description_floor')</label>
                                 <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" placeholder="description" value="{{ isset($obj) && $obj->description ? $obj->description : old('description') }}">
                                 @error('description')
                                     <div class="text-danger">{{ $message }}</div>
